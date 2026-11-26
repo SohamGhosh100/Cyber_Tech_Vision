@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}{{ page_title }} | CyberTechVision{% endblock %}{% block content %}
+<section class="page-hero compact"><div class="eyebrow">SECURITY TOOLS / {{ page_title|upper }}</div><h1>{{ page_title }}</h1><p>Enter content to check for basic cybersecurity warning signs.</p></section>
+<section class="section narrow"><form method="post" class="panel scan-form">
+<label for="target">{% if kind=='email' %}Email subject and message{% elif kind=='qr' %}QR-decoded text or destination URL{% else %}Website address or URL{% endif %}</label>
+<textarea id="target" name="target" rows="5" required placeholder="{% if kind=='email' %}Paste the email subject and message here...{% elif kind=='qr' %}Paste the text or URL decoded from the QR code...{% else %}https://example.com{% endif %}"></textarea>
+<button class="btn primary" type="submit">Analyse now ↗</button><p class="muted small">Do not paste passwords, OTPs, private messages or sensitive personal information.</p></form>
+{% if result %}<div class="panel result-panel"><div class="result-top"><div><div class="eyebrow">ANALYSIS RESULT</div><h2>{{ result.risk }} risk indicators</h2></div><div class="score {{ result.risk|lower }}">{{ result.score }}<small>/100</small></div></div><div class="meter"><span style="width:{{ result.score }}%"></span></div><h3>What we noticed</h3><ul class="reason-list">{% for reason in result.reasons %}<li>{{ reason }}</li>{% endfor %}</ul><p class="notice">This is an educational heuristic result, not a definitive verdict. A low score does not mean the content is safe.</p></div>{% endif %}
+</section>{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Security Tools | CyberTechVision{% endblock %}{% block content %}
+<section class="page-hero"><div class="eyebrow">PHISHGUARD WORKSPACE</div><h1>Security <em>Tools</em></h1><p>Check common warning signs before interacting with unexpected links and messages.</p></section>
+<section class="section"><div class="tool-grid">
+<a class="tool-card" href="{{ url_for('scan',kind='url') }}"><div class="icon-box">↗</div><h3>URL Scanner</h3><p>Review a web address for suspicious patterns and common red flags.</p><b>Open scanner →</b></a>
+<a class="tool-card" href="{{ url_for('scan',kind='email') }}"><div class="icon-box">✉</div><h3>Email Checker</h3><p>Review email text for urgency, credential requests and suspicious wording.</p><b>Check email →</b></a>
+<a class="tool-card" href="{{ url_for('scan',kind='qr') }}"><div class="icon-box">▦</div><h3>QR Scanner</h3><p>Paste the text or destination decoded from a QR code for a basic check.</p><b>Check QR content →</b></a>
+<a class="tool-card" href="{{ url_for('scan',kind='website') }}"><div class="icon-box">◎</div><h3>Website Checker</h3><p>Review a website address for basic domain and connection indicators.</p><b>Check website →</b></a>
+</div><p class="notice">Prototype notice: these checks use simple heuristics. They cannot confirm that a website is safe or malicious.</p></section>
+{% endblock %}

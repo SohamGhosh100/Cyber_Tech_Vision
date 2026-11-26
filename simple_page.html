@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block title %}{{ heading }} | CyberTechVision{% endblock %}{% block page_heading %}{{ heading }}{% endblock %}
+{% block content %}<section class="page-intro"><div><div class="eyebrow">CYBERTECHVISION WORKSPACE</div><h1>{{ heading }}</h1><p>{{ description }}</p></div></section><section class="feature-grid">{% for item in items %}<article class="feature-card"><div class="icon-box">✦</div><h3>{{ item }}</h3><p>Educational content area — customise this module as your project grows.</p></article>{% endfor %}</section>{% endblock %}

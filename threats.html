@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Threat Intelligence | CyberTechVision{% endblock %}{% block content %}
+<section class="page-hero"><div class="eyebrow">STAY INFORMED</div><h1>Threat <em>Intelligence</em></h1><p>Awareness notices and practical security reminders.</p></section><section class="section"><div class="notice warning">Demo feed: these are sample educational advisories, not live threat monitoring or verified current incidents.</div><div class="threat-list">{% for title,desc,level,kind in items %}<div class="threat-item"><div><span class="tag">{{ kind }}</span><h3>{{ title }}</h3><p>{{ desc }}</p></div><span class="risk-tag {{ level|lower }}">{{ level }}</span></div>{% endfor %}</div></section>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Cyber Quiz | CyberTechVision{% endblock %}{% block content %}
+<section class="page-hero compact"><div class="eyebrow">CYBER ACADEMY</div><h1>Knowledge <em>Check</em></h1><p>Choose the safest response for each scenario.</p></section><section class="section narrow">
+{% if score is not none %}<div class="panel"><h2>You scored {{ score }}/{{ questions|length }}</h2><p>{% if score == questions|length %}Excellent work!{% else %}Keep learning and try again to improve your score.{% endif %}</p><a class="btn primary" href="{{ url_for('quiz') }}">Try again</a></div>{% else %}
+<form method="post" class="panel quiz-form">{% for q in questions %}<fieldset><legend>{{ loop.index }}. {{ q.q }}</legend>{% for option in q.opts %}<label class="option"><input type="radio" name="q{{ loop.index0 }}" value="{{ loop.index0 }}" required> {{ option }}</label>{% endfor %}</fieldset>{% endfor %}<button class="btn primary" type="submit">Submit answers</button></form>{% endif %}
+</section>{% endblock %}

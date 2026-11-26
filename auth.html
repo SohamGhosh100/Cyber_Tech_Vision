@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}{{ 'Register' if mode=='register' else 'Login' }} | CyberTechVision{% endblock %}{% block content %}
+<section class="section auth-section"><form method="post" class="panel auth-panel"><div class="eyebrow">CYBERTECHVISION ACCOUNT</div><h1>{{ 'Create your account' if mode=='register' else 'Welcome back' }}</h1><p class="muted">{{ 'Join the cybersecurity learning ecosystem.' if mode=='register' else 'Log in to access your dashboard.' }}</p>
+{% if mode=='register' %}<label>Full name</label><input name="name" required placeholder="Your name">{% endif %}
+<label>Email address</label><input type="email" name="email" required placeholder="you@example.com"><label>Password</label><input type="password" name="password" minlength="8" required placeholder="At least 8 characters"><button class="btn primary full">{{ 'Create account' if mode=='register' else 'Login' }} →</button>
+<p class="muted small">{% if mode=='register' %}Already registered? <a href="{{ url_for('login') }}">Login</a>{% else %}New here? <a href="{{ url_for('register') }}">Create an account</a>{% endif %}</p></form></section>
+{% endblock %}

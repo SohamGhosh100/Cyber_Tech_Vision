@@ -1,0 +1,26 @@
+{% extends "base.html" %}{% block title %}CyberTechVision | Cybersecurity for Everyone{% endblock %}
+{% block content %}
+<section class="hero">
+ <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> YOUR DIGITAL SAFETY PARTNER</div>
+  <h1>Stay one step ahead of <em>cyber threats.</em></h1>
+  <p class="lead">One platform to check suspicious links, build cyber skills and make smarter security decisions.</p>
+  <div class="actions"><a class="btn primary" href="{{ url_for('tools') }}">Explore Security Tools ↗</a><a class="btn secondary" href="{{ url_for('academy') }}">Start Learning</a></div>
+  <div class="trust-row"><span>✓ Beginner friendly</span><span>✓ Learn by doing</span><span>✓ Safety focused</span></div>
+ </div>
+ <div class="hero-visual" style="display:flex; align-items:center; justify-content:center; padding:18px; min-width:0;">
+  <img src="{{ url_for('static', filename='images/cybertechvision-logo.png') }}"
+       alt="CyberTechVision shield and wordmark logo"
+       style="display:block; width:100%; max-width:570px; max-height:440px; height:auto; object-fit:contain; background:transparent; filter:drop-shadow(0 12px 28px rgba(0,120,255,.16));">
+ </div>
+</section>
+<section class="stats-strip"><div><strong>01</strong><span>Unified platform</span></div><div><strong>04</strong><span>Security tools</span></div><div><strong>24/7</strong><span>Learn anytime</span></div><div><strong>∞</strong><span>Build safer habits</span></div></section>
+<section class="section"><div class="section-head"><div><div class="eyebrow">THE ECOSYSTEM</div><h2>Security and learning, <em>connected.</em></h2></div><p>From spotting suspicious activity to understanding how attacks work, CyberTechVision brings essential cyber awareness into one place.</p></div>
+ <div class="feature-grid">
+  <a class="feature-card" href="{{ url_for('tools') }}"><div class="icon-box">⌕</div><h3>Security Tools</h3><p>Check URLs, email content, QR destinations and websites for common warning signs.</p><span>Explore tools →</span></a>
+  <a class="feature-card" href="{{ url_for('academy') }}"><div class="icon-box">▤</div><h3>Cyber Academy</h3><p>Learn cybersecurity through structured courses, short lessons and quizzes.</p><span>Browse courses →</span></a>
+  <a class="feature-card" href="{{ url_for('assistant') }}"><div class="icon-box">✧</div><h3>AI Assistant</h3><p>Get beginner-friendly guidance for everyday cybersecurity questions.</p><span>Ask a question →</span></a>
+  <a class="feature-card" href="{{ url_for('labs') }}"><div class="icon-box">⌘</div><h3>Cyber Labs</h3><p>Explore safe, permission-based practical challenges and CTF learning.</p><span>Enter the labs →</span></a>
+ </div>
+</section>
+<section class="cta-band"><div><div class="eyebrow">TAKE THE FIRST STEP</div><h2>Make cybersecurity a daily habit.</h2><p>Scan thoughtfully. Learn continuously. Stay alert.</p></div><a class="btn primary" href="{{ url_for('register') }}">Create free account ↗</a></section>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Cyber Labs | CyberTechVision{% endblock %}{% block content %}
+<section class="page-hero"><div class="eyebrow">LEARN BY DOING</div><h1>Cyber <em>Labs</em></h1><p>Explore security concepts through controlled, legal and beginner-friendly exercises.</p></section><section class="section"><div class="course-grid">
+<div class="course-card"><span class="tag">LEARNING PATH</span><h3>Ethical Hacking Basics</h3><p>Understand permission, scope, reconnaissance concepts and responsible disclosure.</p><span class="pill">Coming in next version</span></div>
+<a class="course-card" href="{{ url_for('ctf') }}"><span class="tag">BEGINNER CTF</span><h3>Capture The Flag</h3><p>Try a simple text-based challenge that teaches security awareness.</p><b>Start challenge →</b></a>
+<div class="course-card"><span class="tag">SAFE PRACTICE</span><h3>Network Security</h3><p>Learn ports, protocols, firewalls and defensive monitoring concepts.</p><span class="pill">Learning module</span></div>
+</div><p class="notice">All future practical labs should run in isolated environments with explicit permission. Never test real systems without authorisation.</p></section>
+{% endblock %}

@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}{{ lesson[0] }} | CyberTechVision{% endblock %}{% block content %}
+<section class="page-hero compact"><div class="eyebrow">CYBER ACADEMY / LESSON</div><h1>{{ lesson[0] }}</h1></section><section class="section narrow"><article class="panel lesson-panel"><p class="lead">{{ lesson[1] }}</p><h3>Key takeaways</h3><ul class="reason-list">{% for x in lesson[2] %}<li>{{ x }}</li>{% endfor %}</ul><a class="btn primary" href="{{ url_for('quiz') }}">Test your knowledge →</a></article></section>
+{% endblock %}
